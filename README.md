@@ -1,6 +1,6 @@
 # Overview
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+{Talk about what you are trying to accomplish as a software engineer to further your learning.}
 
 {Provide a description of the data set that you are analyzing.  Include the link of where you obtained the data.}
 
@@ -12,7 +12,9 @@
 
 # Data Analysis Results
 
-{List the questions and the answers you found by doing this analysis.}
+My first question that I had with this data was what is the cycle of sunspots, as described by this data?
+My second question was __
+{Also list the answers you found by doing this analysis.}
 
 # Development Environment
 
