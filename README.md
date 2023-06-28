@@ -12,7 +12,8 @@
 
 # Data Analysis Results
 
-My first question that I had with this data was what is the cycle of sunspots, as described by this data?
+My first question that I had with this data was what is the cycle of sunspots, as described by this data? I calculated that the mean cycle length, as described by the data, is 10.87 years. 
+
 My second question was __
 {Also list the answers you found by doing this analysis.}
 
