@@ -14,7 +14,7 @@
 
 My first question that I had with this data was what is the cycle of sunspots, as described by this data? I calculated that the mean cycle length, as described by the data, is 10.87 years. 
 
-My second question was __
+My second question was what is the predicted activity in this month, June 2023, according to the trends from this data?
 {Also list the answers you found by doing this analysis.}
 
 # Development Environment
