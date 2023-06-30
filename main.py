@@ -10,14 +10,18 @@ rawData = pd.read_csv("C:/Users/sierr/Documents/GitHub/sunspotdataanalysis/sunsp
 #Question: what is the cycle of sunspots?
 
 #get lists of the years, and the number of sunspots
-years = rawData["Date In Fraction Of Year"]
-numberOfSunspots = rawData["Number of Sunspots"]
+rawyears = rawData["Date In Fraction Of Year"]
+rawnumberOfSunspots = rawData["Number of Sunspots"]
 
+#filter through data to remove invalid data
+#the .reset_index(drop=True) makes it so they don't keep the old indices
+years = rawyears[rawnumberOfSunspots.values >= 0].reset_index(drop=True)
+numberOfSunspots = rawnumberOfSunspots[rawnumberOfSunspots.values >= 0].reset_index(drop=True)
 
 #locate the maxima, calculate the time between each of the maxima, average them and get uncertainty
 
 #split up data, find max of those sections
-sectionYearBoundaries = [1818.001,1823,1833,1843,1855,1867,1878.5,1889,1901,\
+sectionYearBoundaries = [1818.021,1823,1833,1843,1855,1867,1878.5,1889,1901,\
                          1912,1923,1933,1944,1954,1964.5,1975.5,1986,1997,\
                              2009,2019.832] #values found visually
 sectionBoundariesIndices=[]
