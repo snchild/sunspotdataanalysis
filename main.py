@@ -49,8 +49,9 @@ plt.legend()
 plt.show()
 
 avgCycle = np.mean(np.diff(maxYears))
+uncertCycle = np.std(np.diff(maxYears)) / np.sqrt(len(np.diff(maxYears)))
 
-print("The average cycle of sunspots are ", avgCycle ," years long")
+print("The average cycle of sunspots are", avgCycle ,"+-",uncertCycle,"years long")
 
 ##############################################################################################
 #Question: According to this data, what is the predicted activity in this month, June 2023?
@@ -67,14 +68,21 @@ timeUntilPeak = round((avgCycle/2) - diffInYears, 3)
 
 
 #get the values of the trend at that time
-valuesFromPast = np.array(maxYears[1:]) - timeUntilPeak
-#def isLateEnough(n):
-#    return n > years[0]
-#filteredValuesFromPast = list(filter(isLateEnough, valuesFromPast))
+yearsFromPast = np.around(np.array(maxYears[1:]) - timeUntilPeak, 3)
 
 indicesFromPast = []
-for value in valuesFromPast:
-    indicesFromPast.append(years.index[years == value].tolist()[0])
-print(indicesFromPast)
+sunspotsFromPast = []
+for value in yearsFromPast:
+    if value in years.values:
+        something = years[years == value]
+        indicesFromPast.append(something.index[0])
+        sunspotsFromPast.append(numberOfSunspots[something.index[0]])
+    
 #get min, max, mean
-#calculate uncertainty
+june30Min = pd.Series(sunspotsFromPast).min()
+june30Max = pd.Series(sunspotsFromPast).max()
+june30Mean = pd.Series(sunspotsFromPast).mean()
+june30MeanUncert = np.std(pd.Series(sunspotsFromPast)) / np.sqrt(len(pd.Series(sunspotsFromPast)))
+
+print("The mean number of sunspots on a day like June 30, 2023 is", june30Mean, "+-", june30MeanUncert, ".")
+print("The range of numbers of sunspots are", june30Min, "-", june30Max, ". ")
