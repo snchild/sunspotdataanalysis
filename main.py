@@ -91,7 +91,7 @@ june30Max = pastSunspotsSeries.max()
 june30Mean = pastSunspotsSeries.mean()
 june30MeanUncert = np.std(pastSunspotsSeries) / np.sqrt(len(pastSunspotsSeries))
 
-print("The mean number of sunspots on a day like June 30, 2023 is {:.3f} +- {:.3f}.".capitalize().format(june30Mean,june30MeanUncert))
+print("The mean number of sunspots on a day like June 30, 2023 is {:.0f} +- {:.0f}.".capitalize().format(june30Mean,june30MeanUncert))
 print("The range of numbers of sunspots are {} - {}".format(june30Min, june30Max))
 
 #make a box and whisker plot of the number of sunspots
