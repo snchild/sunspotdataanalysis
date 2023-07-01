@@ -73,7 +73,7 @@ print("The average cycle of sunspots are {:.3f} +- {:.3f} years long.".format(av
 June30InYears = 2023.495
 endOfData = years.iloc[-1]
 diffInYears = June30InYears - endOfData #time between a minimum and June 30th
-timeUntilPeak = (avgCycle/2) - diffInYears #time between June 30th and the porjected maximum
+timeUntilPeak = (avgCycle/2) - diffInYears #time between June 30th and the projected maximum
 
 #get the number of sunspots at the same time of the cycle as June 30th
 #need to round to three decimal places for the comparison with the years
